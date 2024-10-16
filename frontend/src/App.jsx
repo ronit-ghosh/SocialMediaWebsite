@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import { Container } from '@mui/material';
 
-function App() {
-  const [count, setCount] = useState(0)
+const containerStyle = {
+  backgroundColor: '#fff',
+  textAlign: 'center',
+  padding: 1,  
+  color: 'text.secondary',
+  wordWrap: 'break-word',
+  borderRadius:'10px ',
+  border:'1px solid black'
 
+};
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={0} sx={{ marginTop: 3 }}>
+        <Grid item xs={6} md={2}>
+          <Container sx={containerStyle}>xs=6 md=8</Container>
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <Container sx={containerStyle}>xs=6 md=8</Container>
+        </Grid>
+        <Grid item xs={6} md={4}>
+          <Container sx={containerStyle}>xs=6 md=4</Container>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }
-
-export default App
