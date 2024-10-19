@@ -3,16 +3,15 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
+import LeftBar from './Components/LeftBar';
 
 const containerStyle = {
-  backgroundColor: '#fff',
+  backgroundColor: 'black',
   textAlign: 'center',
   padding: 1,  
   color: 'text.secondary',
   wordWrap: 'break-word',
   borderRadius:'10px ',
-  border:'1px solid black'
-
 };
 
 export default function App() {
@@ -20,7 +19,7 @@ export default function App() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={0} sx={{ marginTop: 3 }}>
         <Grid item xs={6} md={2}>
-          <Container sx={containerStyle}>xs=6 md=8</Container>
+          <Container sx={containerStyle}><LeftBar/></Container>
         </Grid>
         <Grid item xs={6} md={6}>
           <Container sx={containerStyle}>xs=6 md=8</Container>
