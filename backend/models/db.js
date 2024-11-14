@@ -23,7 +23,13 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    }, following: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }], followers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 }, { timestamps: true });
 
 const PostSchema = new mongoose.Schema({
